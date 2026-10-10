@@ -8,7 +8,7 @@ package modelo;
  *
  * @author Sofia
  */
-public class cuenta {
+public abstract class cuenta {
     
     private int numero;
     private String nombreDueno;
@@ -53,5 +53,13 @@ public class cuenta {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
+    
+    public void consignar(double valor) {
+    if (valor > 0) {
+        saldo += valor;
+    }
+    }
+    
+    public abstract boolean retirar(double valor);
     
 }
