@@ -37,7 +37,7 @@ public class fecha {
         this.mes = mes;
     }
 
-    public int getAño() {
+    public int getAnio() {
         return anio;
     }
 
