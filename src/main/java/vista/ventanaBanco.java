@@ -44,6 +44,7 @@ public class ventanaBanco extends javax.swing.JFrame {
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
         jButton2.setText("Crear cuenta corriente");
+        jButton2.addActionListener(this::jButton2ActionPerformed);
 
         jButton3.setText("Consultal cuenta");
         jButton3.addActionListener(this::jButton3ActionPerformed);
@@ -95,6 +96,17 @@ formulario.setVisible(true);
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+        formularioCorriente formulario =
+        new formularioCorriente(controlador);
+
+formulario.setLocationRelativeTo(this);
+formulario.setVisible(true);
+
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
