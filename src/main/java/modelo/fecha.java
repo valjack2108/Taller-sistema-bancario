@@ -12,13 +12,13 @@ public class fecha {
     
      private int dia;
     private int mes;
-    private int año;
+    private int anio;
     
     
-    public fecha(int dia, int mes, int año) {
+    public fecha(int dia, int mes, int anio) {
         this.dia = dia;
         this.mes = mes;
-        this.año = año;
+        this.anio = anio;
     }
 
     public int getDia() {
@@ -38,11 +38,11 @@ public class fecha {
     }
 
     public int getAño() {
-        return año;
+        return anio;
     }
 
-    public void setAño(int año) {
-        this.año = año;
+    public void setAño(int anio) {
+        this.anio = anio;
     }
 
     

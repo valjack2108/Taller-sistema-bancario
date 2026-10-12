@@ -10,6 +10,9 @@ package vista;
  */
 public class ventanaBanco extends javax.swing.JFrame {
     
+    private controlador.controladorBanco controlador =
+        new controlador.controladorBanco();
+    
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ventanaBanco.class.getName());
 
     /**
@@ -83,6 +86,13 @@ public class ventanaBanco extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        formularioAhorros formulario =
+        new formularioAhorros(controlador);
+
+formulario.setLocationRelativeTo(this);
+formulario.setVisible(true);
+
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
