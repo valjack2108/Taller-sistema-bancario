@@ -8,11 +8,9 @@ package modelo;
  *
  * @author Sofia
  */
-public class cuentaAhorros {
-    
-    public class CuentaAhorros extends cuenta {
+public class cuentaAhorros extends cuenta {
 
-    public CuentaAhorros(int numero, String nombreDueno,
+    public cuentaAhorros(int numero, String nombreDueno,
                          fecha fechaApertura, double saldo) {
         super(numero, nombreDueno, fechaApertura, saldo);
     }
@@ -26,6 +24,4 @@ public class cuentaAhorros {
             return false;
         }
     }
-}
-    
 }
