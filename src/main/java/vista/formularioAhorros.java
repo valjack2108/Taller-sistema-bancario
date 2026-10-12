@@ -160,11 +160,17 @@ try {
 
     fecha fechaApertura = new fecha(dia, mes, anio);
 
-    controlador.crearCuentaAhorros(
+    boolean creada = controlador.crearCuentaAhorros(
         numero, nombre, fechaApertura, saldo);
 
+if (creada) {
     javax.swing.JOptionPane.showMessageDialog(
-        this, "Cuenta de ahorros creada correctamente.");
+            this, "Cuenta de ahorros creada correctamente.");
+} else {
+    javax.swing.JOptionPane.showMessageDialog(
+            this, "No se pudo crear la cuenta. "
+            + "Verifica los datos o el número duplicado.");
+}
 
 } catch (NumberFormatException e) {
     javax.swing.JOptionPane.showMessageDialog(

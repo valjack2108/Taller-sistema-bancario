@@ -20,18 +20,50 @@ public class controladorBanco {
     
        private cuenta cuentaActual;
        
-       public void crearCuentaAhorros(int numero, String nombreDueno,
-                               fecha fechaApertura, double saldo) {
-           
-   cuentaActual = new cuentaAhorros(numero, nombreDueno, fechaApertura, saldo);
-   }
        
-   public void crearCuentaCorriente(int numero, String nombreDueno, fecha fechaApertura, double saldo, double cupoSobregiro) {
-       
-    cuenta nuevaCuenta = new cuentaCorriente(numero, nombreDueno, fechaApertura, saldo, cupoSobregiro);
+public boolean crearCuentaAhorros(
+        int numero, String nombreDueno,
+        fecha fechaApertura, double saldo) {
+
+    if (buscarCuenta(numero) != null) {
+        return false;
+    }
+
+    if (nombreDueno == null || nombreDueno.trim().isEmpty()
+            || fechaApertura == null || saldo < 0) {
+        return false;
+    }
+
+    cuenta nuevaCuenta =
+            new cuentaAhorros(numero, nombreDueno,
+                    fechaApertura, saldo);
 
     cuentas.add(nuevaCuenta);
-    
+    return true;
+}
+       
+  
+public boolean crearCuentaCorriente(
+        int numero, String nombreDueno,
+        fecha fechaApertura, double saldo,
+        double cupoSobregiro) {
+
+    if (buscarCuenta(numero) != null) {
+        return false;
+    }
+
+    if (nombreDueno == null || nombreDueno.trim().isEmpty()
+            || fechaApertura == null || saldo < 0
+            || cupoSobregiro < 0) {
+        return false;
+    }
+
+    cuenta nuevaCuenta =
+            new cuentaCorriente(numero, nombreDueno,
+                    fechaApertura, saldo, cupoSobregiro);
+
+    cuentas.add(nuevaCuenta);
+    return true;
 }
    
    public cuenta buscarCuenta(int numero) {

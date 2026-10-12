@@ -185,12 +185,17 @@ public formularioCorriente(
     modelo.fecha fechaApertura =
             new modelo.fecha(dia, mes, anio);
 
-    controlador.crearCuentaCorriente(
-            numero, nombre, fechaApertura,
-            saldo, cupoSobregiro);
+    boolean creada = controlador.crearCuentaCorriente(
+        numero, nombre, fechaApertura, saldo, cupoSobregiro);
 
+if (creada) {
     javax.swing.JOptionPane.showMessageDialog(
             this, "Cuenta corriente creada correctamente.");
+} else {
+    javax.swing.JOptionPane.showMessageDialog(
+            this, "No se pudo crear la cuenta. "
+            + "Verifica los datos o el número duplicado.");
+}
 
 } catch (NumberFormatException e) {
     javax.swing.JOptionPane.showMessageDialog(
